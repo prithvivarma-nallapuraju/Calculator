@@ -1,14 +1,24 @@
-let display = document.querySelector('.display')
-let buttons = Array.from(document.getElementsByClassName('button'))
+let inputDisplay = document.getElementById('user-input');
+let outputDisplay = document.getElementById('result');
+let inputButtons = Array.from(document.getElementsByClassName('button'));
 
-buttons.map(button => {
+inputButtons.map ((button) => {
     button.addEventListener('click', (e) => {
-        switch(e.target.innerText) {
-            default: 
-                display.innerText += e.target.innerText
+        switch(e.target.value) {
+            case 'C':
+                if(inputDisplay.innerText) {
+                    inputDisplay.innerText = inputDisplay.innerText.slice(0,-1);
+                }
+                break;
+            case 'AC':
+                inputDisplay.innerText = '';
+                outputDisplay.innerText = '';
+                break;
+            case '=':
+                outputDisplay.innerText = eval(inputDisplay.innerText);
+                break; 
+            default:
+                inputDisplay.innerText += e.target.value;
         }
-    })
-    if(buttons.length>100) {
-        display.innerText = 'Error!'
-    }
-})
+    });
+});

@@ -45,7 +45,7 @@ body {
 }
 
 .main-body .calculator {
-    background-color: rgba(0, 0, 0, 0.624);
+    background-color: rgba(0, 0, 0, 0.74);
     height: 30rem;
     width: 25rem;
     border-radius: 1rem;
@@ -53,16 +53,37 @@ body {
 }
 
 .main-body .calculator .display {
-    background-color: rgba(255, 255, 255, 0.697);
+    background-color: rgba(125, 122, 122, 0.414);
+    box-shadow: inset 2px 3px 5px 0px rgba(0,0,0,0.7);
     margin: 1rem;
     height: 5rem;
     border-radius: 1rem;
-    text-align: center;
+    text-align: right;
     justify-content: center;
     align-items: center;
-    font-size: 2.5rem;
     display: block;
     overflow:scroll;
+}
+
+.main-body .calculator .display output {
+    display: block;
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 95%;
+}
+
+.main-body .calculator .display output#user-input {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #29cb3c;
+}
+
+.main-body .calculator .display output#result {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    width: 95%;
 }
 
 
@@ -99,6 +120,27 @@ body {
     cursor: pointer;
 }
 
+
+.main-body .calculator button.operators:hover {
+    background: rgb(160, 210, 193);
+	color: #000;
+}
+
+.main-body .calculator button.digits:hover,
+.main-body .calculator button.decimal:hover {
+    background: rgba(204, 205, 205, 0.796);
+}
+
+.main-body .calculator button.allclear:hover,
+.main-body .calculator button.clear:hover {
+    background: rgba(225, 89, 132, 0.676);
+    color: #000;
+}
+
+.main-body .calculator button.equals:hover {
+    background: #32aa40;
+    color: #000;
+}
 /* ------------------ End of main body styling --------------- */
 
 
